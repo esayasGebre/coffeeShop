@@ -54,12 +54,6 @@ public class ProductController {
 		return "redirect:/all";
 	}
 	
-/*	@RequestMapping(value="/adda", method=RequestMethod.POST)
-	public String add(@RequestParam("productName") String name) {
-		System.out.println("out-------: " +name);
-		return "redirect:/all";
-	}*/
-	
 	@RequestMapping(value="/products/product", method=RequestMethod.GET)
 	public String get(@RequestParam("id") int id, Model model) {
 		model.addAttribute("product", products.getProduct(id));

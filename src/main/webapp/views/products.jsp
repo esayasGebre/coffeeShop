@@ -7,6 +7,7 @@
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title>Products</title>
+<link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
 	<section>
@@ -18,6 +19,7 @@
 		</div>
 	</section>
 
+<div class="main">
 	<section class="container">
 		<div class="row">
 			<c:forEach items="${products}" var="product">
@@ -42,5 +44,10 @@
 			</c:forEach>
 		</div>
 	</section>
+	</div>
+	<div class="rightMenu" >
+	login
+	</div>
+	
 </body>
 </html>
