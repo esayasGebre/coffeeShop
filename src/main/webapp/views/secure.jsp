@@ -10,10 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>You are in!</title>
 </head>
-<body><h1>You made it!</h1>
-<a href="<c:url value="/products" />"> ..Products </a> |
-<a href="<c:url value="/addproduct" />"> ..Add New Product </a> |
-<a href="<c:url value="/logout" />"> Now logout </a> | 
+
+<body>
+<jsp:include page="header.jsp"/>
+<h1>Coffee shop</h1>
+	<a href="<c:url value="/listpersons" /> "> List of Persons </a> |
+	<a href="<c:url value="/listoforders" /> "> List of Orders </a> |
+	<a href="<c:url value="/mgtproduct" /> "> Product Management </a> |
+	<a href="<c:url value="/logout" /> "> Now logout </a> | 
 
 </body>
 </html>

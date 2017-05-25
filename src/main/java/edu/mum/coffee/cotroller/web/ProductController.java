@@ -18,45 +18,57 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.service.ProductService;
 
-//@RequestMapping("/products")
 @Controller
 public class ProductController {
 	
 	@Autowired
-	ProductService products;
+	ProductService productService;
 	
-	@RequestMapping("*")
+/*	@RequestMapping("*")
 	public String adda() {
 		return "redirect:/products";
-	}
+	}*/
 	
 	@RequestMapping(value={"/products","/all"}, method=RequestMethod.GET)
 	public String getAll(Model model) {
-		model.addAttribute("products" , products.getAllProduct());
+		model.addAttribute("products" , productService.getAllProduct());
 		return "products";
 	}
 	
-	@RequestMapping("/addproduct")
+	@RequestMapping("/mgtproduct")
 	public ModelAndView product(){
-		ModelAndView model = new ModelAndView("addProduct");
+		
+		ModelAndView model = new ModelAndView("productManagement");
+		model.addObject("products" , productService.getAllProduct());
 		return model;	
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public String add(@ModelAttribute("product") Product product,Model model, BindingResult result) {
+	public String add(@ModelAttribute("product") Product product,
+							Model model, BindingResult result) {
 		if(result.hasErrors()){
 			System.out.println("something is happend.............");
-			return "addProduct";
+			return "productManagement";
 		}
 		System.out.println("save.............");
-		products.save(product);
-		model.addAttribute("products",products);
-		return "redirect:/all";
+		productService.save(product);
+		model.addAttribute("products",productService);
+		return "redirect:/mgtproduct";
+	}
+	
+	@RequestMapping(value="products/delete")
+	public String deleteAproduct(@RequestParam("id") int id,
+							Model model) {
+		
+		Product product = productService.getProduct(id);
+		productService.delete(product);
+
+		return "redirect:/mgtproduct";
 	}
 	
 	@RequestMapping(value="/products/product", method=RequestMethod.GET)
 	public String get(@RequestParam("id") int id, Model model) {
-		model.addAttribute("product", products.getProduct(id));
+		model.addAttribute("product", productService.getProduct(id));
 		return "product";
 	}
 
@@ -66,10 +78,4 @@ public class ProductController {
 		return "redirect:/products";
 	}*/
 	
-/*	@RequestMapping(value="/products/delete", method=RequestMethod.POST)
-	public String delete(Product product) {
-		products.delete(product);
-		return "redirect:/products";
-	}*/
-
 }

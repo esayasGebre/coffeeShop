@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
+<jsp:include page="headerUser.jsp"/>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
@@ -46,7 +47,13 @@
 	</section>
 	</div>
 	<div class="rightMenu" >
-	login
+	<center><h1><a href="order">Order Detal</a></h1></center>
+	</div>
+	<div class="rightMenu" >
+	...
+	</div>
+	<div class="rightMenu" >
+	...
 	</div>
 	
 </body>

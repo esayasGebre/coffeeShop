@@ -7,42 +7,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Add person</title>
+<title>User</title>
 </head>
 <body>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Person</h1>
-				<p>Add person</p>
+				<h1>Welcome</h1>
+				<p>abc coffee shop....</p>
 			</div>
 		</div>
 	</section>
 	<section class="container">
-	
-<!-- 	private String firstName;
-	private String lastName;
-	private String email;
-	@OneToOne(cascade = CascadeType.ALL)
-	private Address address;
-	private String phone;
-	private boolean enable; -->
  
-	 <form method="post" action="addNewPerson" class="form-horizontal">
+	 <form method="post" action="addperson" class="form-horizontal">
 			<fieldset>
-				<legend>Add new Person</legend>
-<!-- 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="id"></label>
-					<div class="col-lg-10">
-						<input name="id" type="text"
-							class="form:input-large" />
-					</div>
-				</div> -->
+				<legend>Type your personal detail:</legend>
 
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="firstName">First Name:</label>
 					<div class="col-lg-10">
-						<input name="firstName" type="text"
+						<input name="firstName" type="text" required
 							class="form:input-large" />
 					</div>
 				</div>
@@ -51,7 +36,7 @@
 					<label class="control-label col-lg-2" for="lastName">Last Name:</label>
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
-							<input name="lastName" type="text"
+							<input name="lastName" type="text" required
 								class="form:input-large" />
 						</div>
 					</div>
@@ -60,48 +45,49 @@
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">Email: </label>
 					<div class="col-lg-10">
-						<input type="text" name="email" />
+						<input type="text" name="email" required/>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">Phone:</label>
 					<div class="col-lg-10">
-						<input type="text" name="phone" />
+						<input type="text" name="phone" required/>
 					</div>
 				</div>
 <h4>Address: </h4>	
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">City:</label>
 					<div class="col-lg-10">
-						<input type="text" name="city" />
+						<input type="text" name="city" required/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">State:</label>
 					<div class="col-lg-10">
-						<input type="text" name="state" />
+						<input type="text" name="state" required/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">Country:</label>
 					<div class="col-lg-10">
-						<input type="text" name="country" />
+						<input type="text" name="country" required/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">Zipcode:</label>
 					<div class="col-lg-10">
-						<input type="text" name="zipcode" />
+						<input type="text" name="zipcode" required />
 					</div>
 				</div>
 				
 				
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" name="btnAdd" class="btn btn-primary"
-							value="Add" />
+							value="Next -> to product lists" />
 					</div>
 				</div>
 

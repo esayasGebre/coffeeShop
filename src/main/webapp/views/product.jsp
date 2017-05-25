@@ -7,13 +7,14 @@
 <link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 	<script src="<spring:url value="/resource/js/controllers.js"/>"></script>
-<title>Products</title>
+<title>Product Detail</title>
 </head>
 <body>
+<jsp:include page="headerUser.jsp"/>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Products</h1>
+				<h1>Product Detail</h1>
 			</div>
 		</div>
 	</section>
@@ -28,17 +29,20 @@
 					<strong>Item Code : </strong><span class="label label-warning">${product.id}</span>
 				</p>
  				<h4>${product.price} USD</h4>
-				<p ng-controller="cartCtrl">
- 
+
+				<form action="productcart" method="post" >
+					<input type="text" name="quantity" placeholder="Quantity" required />
+					<input type="hidden" name="id" value="${product.id}" /><br />
+					<br /><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<input type="submit" value="add to cart" class="btn btn-default" />
+				</form>
  <a href="<spring:url value="/products" />" class="btn btn-default">
 						<span class="glyphicon-hand-left glyphicon"></span> back
 					</a>
 
-				</p>
-
 			</div>
 		</div>
-<!--/div-->
+
 	</section>
 </body>
 </html>
