@@ -8,6 +8,7 @@
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title>Add Product</title>
+<link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
 <jsp:include page="header.jsp"/>

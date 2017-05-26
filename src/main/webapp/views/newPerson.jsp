@@ -8,6 +8,7 @@
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title>User</title>
+<link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
 	<section>
@@ -22,7 +23,8 @@
  
 	 <form method="post" action="addperson" class="form-horizontal">
 			<fieldset>
-				<legend>Type your personal detail:</legend>
+				<legend>Type your personal detail:	
+				<a href="<c:url value="/logout" /> "> Logout </a> | </legend>
 
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="firstName">First Name:</label>

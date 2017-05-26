@@ -8,9 +8,8 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
-	<div class="headeruser">
-		<a href="<c:url value="/personupdate" /> "> Update profile </a> |
-		<a href="<c:url value="/logout" /> "> Now logout </a> | 
+	<div class="headeruser"> |
+		<a href="<c:url value="/logout" /> "> Logout </a> | 
 	</div>
 </body>
 </html>

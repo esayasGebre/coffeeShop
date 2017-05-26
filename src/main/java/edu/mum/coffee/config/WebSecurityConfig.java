@@ -15,9 +15,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/home", "/index").permitAll()
-                .antMatchers("/mgtproduct", "/listpersons", "/listoforders","products/delete").hasRole("ADMIN")
-                .antMatchers( "/newperson","/addperson", "/products/productcart","/order","/customer","/orderdetail","/success").hasRole("USER")
+                .antMatchers("/","/pro/products", "/test/add", "/persons", "/home", "/index").permitAll()
+                .antMatchers("/mgtproduct", "/listpersons", "/listoforders","products/delete",
+                		"/newperson","/addperson", "/products/productcart","/order","/customer",
+                		"/orderdetail","/success").hasRole("ADMIN")
+                
+                .antMatchers( "/newperson","/addperson", "/products/productcart","/order",
+                		"/customer","/orderdetail","/success").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()

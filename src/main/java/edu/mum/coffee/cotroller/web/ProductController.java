@@ -1,18 +1,18 @@
 package edu.mum.coffee.cotroller.web;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mum.coffee.domain.Product;
@@ -29,9 +29,22 @@ public class ProductController {
 		return "redirect:/products";
 	}*/
 	
-	@RequestMapping(value={"/products","/all"}, method=RequestMethod.GET)
+	@RequestMapping(value={"/all"}, method=RequestMethod.GET)
 	public String getAll(Model model) {
 		model.addAttribute("products" , productService.getAllProduct());
+		return "products";
+	}
+	
+	
+// from RESTful service	
+	@RequestMapping(value={"/products"}, method=RequestMethod.GET)
+	public String getAllproducts(Model model) {
+		
+		RestTemplate ord = new RestTemplate();
+		List<Product> products = ord.getForObject("http://localhost:8080/pro/products", ArrayList.class);
+		System.out.println("order.........."+products.size());
+		model.addAttribute("products" , products);
+	
 		return "products";
 	}
 	
@@ -72,7 +85,7 @@ public class ProductController {
 		return "product";
 	}
 
-/*	@RequestMapping(value="/products/{id}", method=RequestMethod.POST)
+/*	@RequestMapping(value="/products/{id}", method=RequestMethod.PUT)
 	public String update(Product product, @PathVariable int id) {
 		products.save(product); // product.id already set by binding
 		return "redirect:/products";

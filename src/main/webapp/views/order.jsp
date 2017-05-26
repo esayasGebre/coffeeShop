@@ -1,17 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<title>Order</title>
+<link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
 <jsp:include page="headerUser.jsp"/>
-	<h1>list of selected products...</h1>
-	<div>
+	<section>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Order Detail</h1>
+				<p>Order</p>
+			</div>
+		</div>
+	</section>
+	
+	<section class="container">
+	<fieldset>
+		<legend>List of Products</legend>
 	
 	<table>
 		<tr>
@@ -31,8 +43,13 @@
 	</tr>
 	</c:forEach>
 	</table>
-	<h4>order info:</h4>
 	
+	</fieldset>
+</section>
+<br/>
+	<section class="container">
+	<fieldset>
+		<legend>Order Informaion:</legend>
 	<table>
 		<tr>
 
@@ -60,24 +77,20 @@
 	
 	</table>
 	
-	
-	
-	</div>
+		</fieldset>
+		<br/>
 			<div class="col-md-5">
- 			<a href=" <spring:url value="/success" /> " class="btn btn-default">
-						<span class="glyphicon-hand-left glyphicon"></span> Confirmation
-					</a>
+	 			<a href=" <spring:url value="/success" /> " class="btn btn-default">
+					<span class="glyphicon-hand-left glyphicon"></span> Confirmation
+				</a>
+						
+				 <a href="<spring:url value="/products" />" class="btn btn-default">
+					<span class="glyphicon-hand-left glyphicon"></span> back
+				</a>
 
 			</div>
 		
-			<div class="col-md-5">
- 			<a href="<spring:url value="/products" />" class="btn btn-default">
-						<span class="glyphicon-hand-left glyphicon"></span> back
-					</a>
+</section>
 
-			</div>
-		
-		
-		
 </body>
 </html>

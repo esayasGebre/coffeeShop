@@ -3,17 +3,15 @@ package edu.mum.coffee.cotroller.web;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.client.RestTemplate;
 
 import edu.mum.coffee.domain.Order;
 import edu.mum.coffee.domain.Orderline;
@@ -91,31 +89,23 @@ public class OrderController {
 		return "order";
 	}
 	
-	@RequestMapping("/customer")
-	public String newPerson(){
-		return "redirect:/newperson";
-	}
-	
-	@RequestMapping("/orderdetail")
-	public String oDetail(){
-		return "orderDetail";
-	}
-	
 	@RequestMapping("/success")
 	public String success(ModelMap model){
 		
 		Order order = (Order) model.get("orderDetail");
-		
 		//System.out.println(order.getPerson().getEmail());
 		System.out.println("Goodbye...........!");
-		
 		Person person = (Person) model.get("currentPerson");
 		personService.savePerson(person);
 		orderService.save(order);
-
 		return "successOrder";
 	}
 	
+	@RequestMapping("/listoforders")
+	public String getAllOrders(Model model) {
+		model.addAttribute("orders", orderService.findAll());
+		return "orders";
+	}
 	
 /*	@RequestMapping(value="/adminlog", method=RequestMethod.POST)
 	public String log(@RequestParam("username") String uname, @RequestParam("password") String pw, Model model){
@@ -133,15 +123,6 @@ public class OrderController {
 	public String log(){
 		return "adminLogin";
 	}*/
-	
-	
-	
-	@RequestMapping("/listoforders")
-	public String getAllOrders(Model model) {
-		model.addAttribute("orders", orderService.findAll());
-	
-		return "orders";
-	}
 	
 	
 }

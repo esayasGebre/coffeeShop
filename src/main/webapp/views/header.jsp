@@ -12,7 +12,7 @@
 		<a href="<c:url value="/listpersons" /> "> List of Persons </a> |
 		<a href="<c:url value="/listoforders" /> "> List of Orders </a> |
 		<a href="<c:url value="/mgtproduct" /> "> Product Management </a> |
-		<a href="<c:url value="/logout" /> "> Now logout </a> | 
+		<a href="<c:url value="/logout" /> "> Logout </a> | 
 	</div>
 </body>
 </html>

@@ -13,6 +13,12 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping("/exit")
+	public String success(SessionStatus ss){
+		ss.setComplete();
+		return "redirect:/products";
+	}
+	
 	@GetMapping({"/secure"})
 	public String securePage() {
 		
@@ -22,12 +28,7 @@ public class HomeController {
 			
 		}*/
 		
-		
 		return "secure";
-	}
-	@GetMapping({"/front"})
-	public String frontPage() {
-		return "front";
 	}
 	
 	
@@ -36,11 +37,10 @@ public class HomeController {
 		return "redirect:/customer";
 	}*/
 	
-	@RequestMapping("/exit")
-	public String success(SessionStatus ss){
-		ss.setComplete();
-		return "redirect:/products";
-	}
+/*	@GetMapping({"/front"})
+	public String frontPage() {
+		return "front";
+	}*/
 	
 	
 }
