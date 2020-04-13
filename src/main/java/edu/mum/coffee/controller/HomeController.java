@@ -7,40 +7,33 @@ import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
 public class HomeController {
-	
-	@GetMapping({"/", "/index", "/home"})
+
+	/**
+	 * 
+	 * @return
+	 */
+	@GetMapping({ "/", "/index", "/home" })
 	public String homePage() {
 		return "home";
 	}
-	
+
+	/**
+	 * 
+	 * @param ss
+	 * @return
+	 */
 	@RequestMapping("/exit")
-	public String success(SessionStatus ss){
+	public String success(SessionStatus ss) {
 		ss.setComplete();
 		return "redirect:/products";
 	}
-	
-	@GetMapping({"/secure"})
+
+	/**
+	 * 
+	 * @return
+	 */
+	@GetMapping({ "/secure" })
 	public String securePage() {
-		
-/*		if(){
-			
-		}else{
-			
-		}*/
-		
 		return "secure";
 	}
-	
-	
-/*	@GetMapping({"/", "/index", "/home"})
-	public String homePage() {
-		return "redirect:/customer";
-	}*/
-	
-/*	@GetMapping({"/front"})
-	public String frontPage() {
-		return "front";
-	}*/
-	
-	
 }

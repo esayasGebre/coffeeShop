@@ -52,6 +52,5 @@ public class Address {
 		return "Address [id=" + id + ", city=" + city + ", state=" + state + ", country=" + country + ", zipcode="
 				+ zipcode + "]";
 	}
-	
-	
+
 }

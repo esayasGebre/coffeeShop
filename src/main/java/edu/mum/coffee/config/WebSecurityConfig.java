@@ -16,12 +16,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .authorizeRequests()
                 .antMatchers("/","/pro/products", "/test/add", "/persons", "/home", "/index").permitAll()
-                .antMatchers("/mgtproduct", "/listpersons", "/listoforders","products/delete",
-                		"/newperson","/addperson", "/products/productcart","/order","/customer",
-                		"/orderdetail","/success").hasRole("ADMIN")
-                
-                .antMatchers( "/newperson","/addperson", "/products/productcart","/order",
-                		"/customer","/orderdetail","/success").hasRole("USER")
+                .antMatchers("/mgtproduct", "/listpersons", "/listoforders","products/delete","/newperson",
+                		"/addperson", "/products/productcart","/order","/customer","/orderdetail","/success")
+                .hasRole("ADMIN")
+                .antMatchers( "/newperson","/addperson", "/products/productcart","/order","/customer",
+                		"/orderdetail","/success").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -32,7 +31,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             	.logoutSuccessUrl("/")
                 .permitAll();
     }
-
+	
+	/**
+	 * configureGlobal
+	 *  
+	 * @param auth
+	 * @throws Exception
+	 */
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("super").password("pw").roles("ADMIN");

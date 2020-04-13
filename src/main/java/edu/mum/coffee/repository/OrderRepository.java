@@ -9,11 +9,11 @@ import edu.mum.coffee.domain.Order;
 import edu.mum.coffee.domain.Person;
 import edu.mum.coffee.domain.Product;
 
-public interface OrderRepository extends JpaRepository<Order, Integer>{
-	
-	List<Order> findDistinctOrderByOrderLines_Product(Product product);
-	List<Order> findOrderByPerson(Person person);
-	List<Order> findOrderByOrderDateBetween(Date minDate, Date maxDate);
-	
+public interface OrderRepository extends JpaRepository<Order, Integer> {
 
+	List<Order> findDistinctOrderByOrderLines_Product(Product product);
+
+	List<Order> findOrderByPerson(Person person);
+
+	List<Order> findOrderByOrderDateBetween(Date minDate, Date maxDate);
 }

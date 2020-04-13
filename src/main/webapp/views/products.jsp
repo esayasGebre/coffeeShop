@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
-<jsp:include page="headerUser.jsp"/>
+	<jsp:include page="headerUser.jsp" />
 	<section>
 		<div class="jumbotron">
 			<div class="container">
@@ -20,41 +20,39 @@
 		</div>
 	</section>
 
-<div class="main">
-	<section class="container">
-		<div class="row">
-			<c:forEach items="${products}" var="product">
-				<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
-					<div class="thumbnail">
-					<!-- img src="<c:url value="/resource/images/${product.id}.png"></c:url>" alt="image"  style = "width:100%"/-->
-						<div class="caption">
-							<h3>${product.productName}</h3>
-							<p>${product.description}</p>
-							<p>${product.price}USD</p>
- 							<p>
-								<a
-									href=" <spring:url value="/products/product?id=${product.id}" /> "
-									class="btn btn-primary"> <span
-									class="glyphicon-info-sign glyphicon" /></span> Details
-								</a>
-							</p>
+	<div class="main">
+		<section class="container">
+			<div class="row">
+				<c:forEach items="${products}" var="product">
+					<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
+						<div class="thumbnail">
+							<!-- img src="<c:url value="/resource/images/${product.id}.png"></c:url>" alt="image"  style = "width:100%"/-->
+							<div class="caption">
+								<h3>${product.productName}</h3>
+								<p>${product.description}</p>
+								<p>${product.price}USD</p>
+								<p>
+									<a
+										href=" <spring:url value="/products/product?id=${product.id}" /> "
+										class="btn btn-primary"> <span
+										class="glyphicon-info-sign glyphicon" /></span> Details
+									</a>
+								</p>
 
+							</div>
 						</div>
 					</div>
-				</div>
-			</c:forEach>
-		</div>
-	</section>
+				</c:forEach>
+			</div>
+		</section>
 	</div>
-	<div class="rightMenu" >
-	<center><h1><a href="order">Order Detal</a></h1></center>
+	<div class="rightMenu">
+		<h1>
+			<a href="order">Order Details</a>
+		</h1>
 	</div>
-	<div class="rightMenu" >
-	...
-	</div>
-	<div class="rightMenu" >
-	...
-	</div>
-	
+	<div class="rightMenu">...</div>
+	<div class="rightMenu">...</div>
+
 </body>
 </html>

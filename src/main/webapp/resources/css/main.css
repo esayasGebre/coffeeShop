@@ -1,49 +1,48 @@
-
-
-
 .rightMenu {
-	float:right;
-  	width: 20%;
-  	border:2px solid #A9BCF5;
-  	margin-right:10%;
+	float: right;
+	width: 20%;
+	border: 2px solid #A9BCF5;
+	margin-right: 10%;
 }
-.main{
-	float:left;
-	width:65%;
-	margin-left:5%;
+
+.main {
+	float: left;
+	width: 65%;
+	margin-left: 5%;
 }
 
 .aleft {
-	float:left;
-  	width: 30%;
-  	border:2px solid red;
-}
-.aright{
-	float:left;
-  	width: 60%;
-  	border:2px solid red;
+	float: left;
+	width: 30%;
+	border: 2px solid red;
 }
 
-.header{
-	background-color:gray;
-	width:100%;
-	height:100px;
-	margin:0;
-	padding:0;
+.aright {
+	float: left;
+	width: 60%;
+	border: 2px solid red;
 }
 
-.footer{
-	background-color:#A9BCF5;
-	width:100%;
-	height:120px;
-	margin:0;
-	padding:0;
-}
-.headeruser{
-	background-color:#A9BCF5;
-	width:100%;
-	height:40px;
-	margin:0;
-	padding:0;
+.header {
+	background-color: gray;
+	width: 100%;
+	height: 100px;
+	margin: 0;
+	padding: 0;
 }
 
+.footer {
+	background-color: #A9BCF5;
+	width: 100%;
+	height: 120px;
+	margin: 0;
+	padding: 0;
+}
+
+.headeruser {
+	background-color: #A9BCF5;
+	width: 100%;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+}

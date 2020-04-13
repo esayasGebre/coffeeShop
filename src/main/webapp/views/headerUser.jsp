@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
-	<div class="headeruser"> |
-		<a href="<c:url value="/logout" /> "> Logout </a> | 
+	<div class="headeruser">
+		| <a href="<c:url value="/logout" /> "> Logout </a> |
 	</div>
 </body>
 </html>

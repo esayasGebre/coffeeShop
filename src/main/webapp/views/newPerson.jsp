@@ -20,14 +20,17 @@
 		</div>
 	</section>
 	<section class="container">
- 
-	 <form method="post" action="addperson" class="form-horizontal">
+
+		<form method="post" action="addperson" class="form-horizontal">
 			<fieldset>
-				<legend>Type your personal detail:	
-				<a href="<c:url value="/logout" /> "> Logout </a> | </legend>
+				<legend>
+					Type your personal detail: <a href="<c:url value="/logout" /> ">
+						Logout </a> |
+				</legend>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="firstName">First Name:</label>
+					<label class="control-label col-lg-2" for="firstName">First
+						Name:</label>
 					<div class="col-lg-10">
 						<input name="firstName" type="text" required
 							class="form:input-large" />
@@ -35,7 +38,8 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="lastName">Last Name:</label>
+					<label class="control-label col-lg-2" for="lastName">Last
+						Name:</label>
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
 							<input name="lastName" type="text" required
@@ -45,35 +49,36 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="productType">Email: </label>
+					<label class="control-label col-lg-2" for="productType">Email:
+					</label>
 					<div class="col-lg-10">
-						<input type="text" name="email" required/>
+						<input type="text" name="email" required />
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">Phone:</label>
 					<div class="col-lg-10">
-						<input type="text" name="phone" required/>
+						<input type="text" name="phone" required />
 					</div>
 				</div>
-<h4>Address: </h4>	
+				<h4>Address:</h4>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">City:</label>
 					<div class="col-lg-10">
-						<input type="text" name="city" required/>
+						<input type="text" name="city" required />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">State:</label>
 					<div class="col-lg-10">
-						<input type="text" name="state" required/>
+						<input type="text" name="state" required />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="productType">Country:</label>
 					<div class="col-lg-10">
-						<input type="text" name="country" required/>
+						<input type="text" name="country" required />
 					</div>
 				</div>
 				<div class="form-group">
@@ -82,10 +87,11 @@
 						<input type="text" name="zipcode" required />
 					</div>
 				</div>
-				
-				
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-	
+
+
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" name="btnAdd" class="btn btn-primary"

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+	<jsp:include page="header.jsp" />
 	<section>
 		<div class="jumbotron">
 			<div class="container">
@@ -22,27 +22,24 @@
 
 	<section class="container">
 		<div class="row">
-		
-		<table class="table table-hover">
-		<tr>
-			<th>Customer Name</th>
-			<th>Email</th>
-			<th>Phone</th>
-			<th>Address</th>
-		</tr>
-		<c:forEach var="p" items="${persons}">
-		<tr>
-		<td>${p.getFirstName()} ${p.getLastName()}</td>
-		<td>${p.getEmail()}</td>
-		<td>${p.getPhone()}</td>
-		<td>${p.getAddress().getCity()}
-			 ${p.getAddress().getState()}
-			 ${p.getAddress().getCountry()}
-			 ${p.getAddress().getZipcode()}</td>
-		</c:forEach>
-	</table>
-	</div>
+			<table class="table table-hover">
+				<tr>
+					<th>Customer Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Address</th>
+				</tr>
+				<c:forEach var="p" items="${persons}">
+					<tr>
+						<td>${p.getFirstName()}${p.getLastName()}</td>
+						<td>${p.getEmail()}</td>
+						<td>${p.getPhone()}</td>
+						<td>${p.getAddress().getCity()}${p.getAddress().getState()}
+							${p.getAddress().getCountry()} ${p.getAddress().getZipcode()}</td>
+				</c:forEach>
+			</table>
+		</div>
 	</section>
-<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

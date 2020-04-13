@@ -28,7 +28,6 @@ public class PersonServiceTest {
 
 	@Before
 	public void setUp() {
-
 		// Remove previous objects
 		deleteTestObjects();
 
