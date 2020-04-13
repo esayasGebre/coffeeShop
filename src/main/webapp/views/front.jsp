@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
-<%-- <jsp:include page="header.jsp"/> --%>
+	<%-- <jsp:include page="header.jsp"/> --%>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
@@ -20,20 +20,17 @@
 			</div>
 		</div>
 	</section>
-	
-	
-		<section class="container">
-			<fieldset>
-				<legend>
-	
-	<a href="<c:url value="/listpersons" /> "> List of Persons </a> <br />
-	<a href="<c:url value="/listoforders" /> "> List of Orders </a> <br />
-	<a href="<c:url value="/mgtproduct" /> "> Product Management </a> <br />
-	
-	<a href="<c:url value="/newperson" /> "> New Order </a> <br />
-	<a href="<c:url value="/secure" />" > Login </a> 
-				</legend>
-			</fieldset>
-		</section>
+
+	<section class="container">
+		<fieldset>
+			<legend>
+				<a href="<c:url value="/listpersons" /> "> List of Persons </a> <br />
+				<a href="<c:url value="/listoforders" /> "> List of Orders </a> <br />
+				<a href="<c:url value="/mgtproduct" /> "> Product Management </a> <br />
+				<a href="<c:url value="/newperson" /> "> New Order </a> <br /> <a
+					href="<c:url value="/secure" />"> Login </a>
+			</legend>
+		</fieldset>
+	</section>
 </body>
 </html>

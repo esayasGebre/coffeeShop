@@ -17,20 +17,37 @@ public class PersonController {
 
 	@Autowired
 	private PersonService personService;
-	
+
+	/**
+	 * newPerson
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/newperson")
 	public String newPerson() {
 		return "newPerson";
 	}
-	
+
+	/**
+	 * newCustomer
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/customer")
-	public String newCustomer(){
+	public String newCustomer() {
 		return "redirect:/newperson";
 	}
 
+	/**
+	 * add: person
+	 * 
+	 * @param person
+	 * @param address
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "addperson", method = RequestMethod.POST)
 	public String add(Person person, Address address, ModelMap model) {
-
 		person.setAddress(address);
 		if (!model.containsAttribute("currentPerson")) {
 			System.out.println("A person is not exist before.....");
@@ -39,18 +56,19 @@ public class PersonController {
 			Person prs = (Person) model.get("currentPerson");
 			System.out.println("A persone is already our coustomer, name:" + prs.getFirstName());
 		}
-
 		return "redirect:/products";
 	}
-	
+
+	/**
+	 * getPersons
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/listpersons")
 	public String getPersons(Model model) {
 		model.addAttribute("persons", personService.getAllpersons());
-		
 		return "persons";
 	}
-	
-
-	
 
 }

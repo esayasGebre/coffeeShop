@@ -13,8 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import edu.mum.coffee.domain.Product;
-import edu.mum.coffee.domain.ProductType;
 import edu.mum.coffee.service.ProductService;
+import edu.mum.coffee.utils.ProductType;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

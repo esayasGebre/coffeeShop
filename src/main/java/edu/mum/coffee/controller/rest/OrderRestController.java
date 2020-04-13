@@ -12,28 +12,48 @@ import edu.mum.coffee.domain.Order;
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.service.OrderService;
 
-@RestController 
+@RestController
 @RequestMapping("/o")
 public class OrderRestController {
-	
+
 	@Autowired
 	private OrderService orderService;
 
+	/**
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/orders")
 	public List<Order> getOrders() {
-		return orderService.findAll(); 
+		return orderService.findAll();
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("/orders/{id}")
 	public Order getOrder(@PathVariable int id) {
-		return orderService.findById(id); 
+		return orderService.findById(id);
 	}
-	
+
+	/**
+	 * 
+	 * @param minDate
+	 * @param maxDate
+	 * @return
+	 */
 	@RequestMapping("/orders/{minPrice}/{maxPrice}")
 	public List<Order> getOrder(@PathVariable Date minDate, @PathVariable Date maxDate) {
 		return orderService.findByDate(minDate, maxDate);
 	}
-	
+
+	/**
+	 * 
+	 * @param product
+	 * @return
+	 */
 	@RequestMapping("/orders/byproduct")
 	public List<Order> getOrder(@RequestBody Product product) {
 		return orderService.findByProduct(product);

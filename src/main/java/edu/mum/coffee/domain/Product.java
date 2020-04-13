@@ -6,6 +6,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import edu.mum.coffee.utils.ProductType;
+
 @Entity
 public class Product {
 

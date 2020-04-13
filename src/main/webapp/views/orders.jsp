@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+	<jsp:include page="header.jsp" />
 	<section>
 		<div class="jumbotron">
 			<div class="container">
@@ -22,30 +22,28 @@
 
 	<section class="container">
 		<div class="row">
-		
-		<table class="table table-hover">
-		<tr>
-			<th>Order Id</th>
-			<th>Order Date</th>
-			<th>Quantity</th>
-			<th>Total Amount</th>
-			<th>Customer Name</th>
-			<th>Phone</th>
-		
-		</tr>
-		<c:forEach var="order" items="${orders}">
-		<tr>
-		<td>${order.getId()}</td>
-		<td>${order.getOrderDate()}</td>
-		<td>${order.getQuantity()}</td>
-		<td>${order.getTotalAmount()}</td>
-		<td>${order.getPerson().getFirstName()} ${order.getPerson().getLastName()}</td>
-		<td>${order.getPerson().getPhone()}</td>
-
-		</c:forEach>
-	</table>
-	</div>
+			<table class="table table-hover">
+				<tr>
+					<th>Order Id</th>
+					<th>Order Date</th>
+					<th>Quantity</th>
+					<th>Total Amount</th>
+					<th>Customer Name</th>
+					<th>Phone</th>
+				</tr>
+				<c:forEach var="order" items="${orders}">
+					<tr>
+						<td>${order.getId()}</td>
+						<td>${order.getOrderDate()}</td>
+						<td>${order.getQuantity()}</td>
+						<td>${order.getTotalAmount()}</td>
+						<td>${order.getPerson().getFirstName()}
+							${order.getPerson().getLastName()}</td>
+						<td>${order.getPerson().getPhone()}</td>
+				</c:forEach>
+			</table>
+		</div>
 	</section>
-<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

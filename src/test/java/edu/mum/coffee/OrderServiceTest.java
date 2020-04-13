@@ -18,10 +18,10 @@ import edu.mum.coffee.domain.Order;
 import edu.mum.coffee.domain.Orderline;
 import edu.mum.coffee.domain.Person;
 import edu.mum.coffee.domain.Product;
-import edu.mum.coffee.domain.ProductType;
 import edu.mum.coffee.service.OrderService;
 import edu.mum.coffee.service.PersonService;
 import edu.mum.coffee.service.ProductService;
+import edu.mum.coffee.utils.ProductType;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
